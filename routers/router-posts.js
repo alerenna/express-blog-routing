@@ -19,11 +19,9 @@ router.get('/', (req,res) => {
 //BONUS | Provare a restituire un singolo post dalla rotta show, sempre in formato json
 router.get('/:slug', (req,res) => {
     
-    res.send(
-        posts.find((post) => {
-            return req.params.slug === post.slug
-        })
-    )
+   const post = posts.find(post => req.params.slug === post.slug)
+
+   res.send(post)
 })
 
 //Store
